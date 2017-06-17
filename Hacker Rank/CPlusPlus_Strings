@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+   // Complete the program
+    string str1, str2;
+    cin >> str1 >> str2;
+    char c = str1[0];
+    char d = str2[0];
+    cout << str1.size() << " " << str2.size()<< endl;
+    string str3 = str1 + str2;
+    cout << str3 << endl;
+    for ( int i = 0; i < (str1.size()); i++){
+        if (i==0){
+            str1[i] = d;
+        }
+        else{
+            str1[i] = str1[i];            
+        }    
+        cout << str1[i];
+    }
+    cout << " ";
+    for ( int i = 0; i < (str2.size()); i++){
+        if (i==0){
+            str2[i] = c;            
+        }
+        else
+            str2[i] = str2[i];
+        cout << str2[i];
+    }
+    return 0;
+} 
