@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    vector<int> arr(5);
+    for(int arr_i = 0; arr_i < 5; arr_i++){
+       cin >> arr[arr_i];
+    }
+    vector<long> sums;
+    
+    for(int i = 0; i< 5; i++){
+        long sum = 0;
+        for(int arr_i = 0; arr_i < 5; arr_i++){
+            sum +=arr[arr_i];
+        }
+        sum = sum - arr[i];
+        //cout << sum << endl;
+        sums.push_back(sum);
+    }
+    std::cout << *std::min_element(sums.begin(),sums.end()) << " " << *std::max_element(sums.begin(),sums.end()) ;
+    
+    return 0;
+}
