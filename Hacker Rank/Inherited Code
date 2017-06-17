@@ -1,0 +1,12 @@
+/* Define the exception here */
+class BadLengthException 
+{
+    int number;
+    public:
+    BadLengthException(int length) {number = length;}
+    int what() const
+    {
+        return number;
+    }     
+    
+};
