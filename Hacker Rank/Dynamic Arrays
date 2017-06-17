@@ -28,7 +28,7 @@ int main() {
             int pos = (lastans^x)%n;
             int idx = y%((int)v[pos].size());
             lastans = v[pos][idx];
-            cout<<lastans<<endl;
+            cout << lastans << endl;
         }
     }
     return 0;
