@@ -10,25 +10,24 @@ using namespace std;
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
 
-    vector<int> v[100005];
-    int n, q, type, x, y;
-    cin >> n >> q;
-    assert(n >= 1 && n <= 100000 && q >= 1 && q <= 100000);
+    int N, q, type, x, y;
+    cin >> N >> q;
+    vector<int> v[N];    
+    
     int lastans = 0;
-    while(q--)
-    {
+    while ( q--){
         cin >> type >> x >> y;
-        assert(type >= 1 && type <= 2 && x >= 0 && x <= 1000000000 && y >= 0 && y <= 1000000000);
-        if(type == 1)
-        {
-            v[(lastans^x)%n].push_back(y);
+        if ( type == 1){
+            int seq = (x^lastans)%N;
+            v[seq].push_back(y);
         }
-        else
-        {
-            int pos = (lastans^x)%n;
-            int idx = y%((int)v[pos].size());
-            lastans = v[pos][idx];
-            cout << lastans << endl;
+        
+        else if(type == 2){
+            int seq = (x^lastans)%N;
+            int pos = y % v[seq].size();
+            //cout << v[seq].size();
+            lastans = v[seq][pos];
+            cout << lastans << "\n";
         }
     }
     return 0;
